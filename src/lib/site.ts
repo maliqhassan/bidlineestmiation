@@ -17,9 +17,6 @@ export const site = {
   address: "220 E. Las Colinas Blvd., Irving, TX 75039",
   hours: "Mon–Fri · 8 AM – 6 PM",
   support: "24/7 customer support — rush estimates welcome round the clock.",
-  // Downloadable sample estimate (PDF in /public, e.g. "/sample-estimate.pdf").
-  // Leave null until an ANONYMIZED copy (no client name/address) is added — the button stays hidden.
-  samplePdf: null as string | null,
   // Logo mark in /public. Set to null to fall back to the built-in SVG mark.
   logo: "/logo.png" as string | null,
   // Leave a link empty to hide that icon in the footer

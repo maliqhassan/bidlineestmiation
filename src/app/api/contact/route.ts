@@ -43,9 +43,16 @@ export async function POST(request: Request) {
     return json({ ok: false, error: "Attachments are too large — please share a Dropbox / Drive link instead." }, 413);
   }
 
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO, CONTACT_FROM } = process.env;
+  // Trimmed: values pasted into the Vercel dashboard often carry stray spaces/newlines
+  const env = (key: string) => process.env[key]?.trim() || undefined;
+  const [SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO, CONTACT_FROM] = [
+    "SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASS", "CONTACT_TO", "CONTACT_FROM",
+  ].map(env);
 
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
+    // Names only — never log secret values. Shows up in Vercel → Logs.
+    const missing = (["SMTP_HOST", "SMTP_USER", "SMTP_PASS"] as const).filter((k) => !env(k));
+    console.error(`[contact] Missing environment variable(s): ${missing.join(", ")}. Add them for the Production environment in Vercel and redeploy.`);
     if (process.env.NODE_ENV !== "production") {
       console.info("[contact] SMTP not configured — submission logged only:", { ...data, files: files.map((f) => f.name) });
       return json({ ok: true, dev: true });

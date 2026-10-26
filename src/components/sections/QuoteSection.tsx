@@ -1,5 +1,4 @@
-import { ArrowRight, Clock, FileText, Headphones, Mail, MapPin, Phone } from "lucide-react";
-import Link from "next/link";
+import { Clock, Headphones, Mail, MapPin, Phone } from "lucide-react";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Reveal, SectionHeading, Stagger, StaggerItem } from "@/components/ui/motion";
 import { site } from "@/lib/site";
@@ -24,16 +23,6 @@ export function QuoteSection({ compact = false }: { compact?: boolean }) {
             highlight={["Free", "Quote"]}
             text="Upload your plans or just tell us about the project — a senior estimator will reply with a flat price and turnaround, usually in under 60 minutes during business hours."
           />
-          <Reveal delay={0.2}>
-            <Link
-              href="/services#sample-estimate"
-              className="group mt-6 inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2.5 text-sm font-medium text-ink transition hover:border-signal"
-            >
-              <FileText className="h-4 w-4 text-signal-deep" />
-              Not sure what you&apos;ll get? <span className="font-semibold text-signal-deep">View a sample estimate</span>
-              <ArrowRight className="h-4 w-4 text-signal-deep transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </Reveal>
         </div>
 
         <Reveal delay={0.1} className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
