@@ -22,7 +22,7 @@ export default function ProcessPage() {
         highlight={["Winning", "Bid"]}
         text="No contracts, no monthly fees. Upload your plans and get a flat quote in 1 hour — that's how simple outsourcing your estimating should be."
       />
-      <ProcessTimeline />
+      <ProcessTimeline heading={false} />
       <TakeoffDemo />
       <Deliverables />
       <ProjectsGallery />

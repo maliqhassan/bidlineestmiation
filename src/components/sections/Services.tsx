@@ -80,7 +80,7 @@ function ServiceRow({ index }: { index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [index % 2 ? 4 : -4, index % 2 ? -4 : 4]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [index % 2 ? 2.5 : -2.5, index % 2 ? -2.5 : 2.5]);
   const flip = index % 2 === 1;
 
   return (

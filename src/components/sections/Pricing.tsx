@@ -27,7 +27,7 @@ export function PricingPlans() {
                   </div>
                 )}
                 <div
-                  className={`relative flex h-full flex-col rounded-[2rem] p-8 sm:p-10 ${
+                  className={`relative flex h-full flex-col rounded-[2rem] p-6 sm:p-10 ${
                     p.featured ? "bg-ink text-white" : "border border-line bg-white text-ink"
                   }`}
                 >
@@ -38,11 +38,13 @@ export function PricingPlans() {
                   )}
                   <h3 className="font-display text-2xl font-bold">{p.name}</h3>
                   <p className={`mt-3 text-sm leading-relaxed ${p.featured ? "text-mist" : "text-muted"}`}>{p.blurb}</p>
-                  <p className="mt-7 flex items-baseline gap-2">
+                  <div className="mt-7">
                     <span className={`text-sm ${p.featured ? "text-mist" : "text-muted"}`}>Starting at</span>
-                    <span className={`font-display text-6xl font-bold ${p.featured ? "text-gradient" : ""}`}>{p.price}</span>
-                    <span className={p.featured ? "text-mist" : "text-muted"}>{p.unit}</span>
-                  </p>
+                    <p className="mt-1 flex items-baseline gap-2 whitespace-nowrap">
+                      <span className={`font-display text-5xl font-bold sm:text-6xl ${p.featured ? "text-gradient" : ""}`}>{p.price}</span>
+                      <span className={p.featured ? "text-mist" : "text-muted"}>{p.unit}</span>
+                    </p>
+                  </div>
                   {p.lead && <p className="mt-7 text-sm font-semibold text-signal">{p.lead}</p>}
                   <ul className={`${p.lead ? "mt-4" : "mt-7"} flex-1 space-y-3.5`}>
                     {p.features.map((f, j) => (

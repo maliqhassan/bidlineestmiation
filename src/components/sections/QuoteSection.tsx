@@ -13,8 +13,9 @@ const cards = [
 export function QuoteSection({ compact = false }: { compact?: boolean }) {
   return (
     <section id="quote" className="bg-grid-light relative scroll-mt-24 overflow-hidden bg-paper py-24 sm:py-32">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-        <div>
+      {/* DOM order (heading → form → cards) puts the form first on phones; desktop places it in the right column */}
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:grid-rows-[auto_1fr] lg:gap-x-12 lg:px-8">
+        <div className="lg:col-start-1 lg:row-start-1">
           <SectionHeading
             align="left"
             eyebrow="Get Started"
@@ -22,7 +23,19 @@ export function QuoteSection({ compact = false }: { compact?: boolean }) {
             highlight={["Free", "Quote"]}
             text="Upload your plans or just tell us about the project — a senior estimator will reply with a flat price and turnaround, usually in under 60 minutes during business hours."
           />
-          <Stagger className="mt-10 grid gap-4 sm:grid-cols-2">
+        </div>
+
+        <Reveal delay={0.1} className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <div className="relative rounded-[2rem] border border-line bg-white p-5 shadow-2xl shadow-ink/10 sm:p-10">
+            <div className="absolute -right-3 -top-3 h-24 w-24 rounded-full bg-signal/30 blur-2xl" />
+            <h3 className="font-display text-2xl font-bold text-ink">Request a Free Quote</h3>
+            <p className="mt-1.5 mb-8 text-sm text-muted">No obligation. No spam. Just a flat number and a deadline.</p>
+            <QuoteForm compact={compact} />
+          </div>
+        </Reveal>
+
+        <div className="lg:col-start-1 lg:row-start-2">
+          <Stagger className="grid gap-4 sm:grid-cols-2">
             {cards.map((c) => {
               const body = (
                 <div className="group flex h-full gap-4 rounded-2xl border border-line bg-white p-5 transition hover:-translate-y-1 hover:border-signal hover:shadow-lg hover:shadow-signal/10">
@@ -52,15 +65,6 @@ export function QuoteSection({ compact = false }: { compact?: boolean }) {
             </p>
           </Reveal>
         </div>
-
-        <Reveal delay={0.1}>
-          <div className="relative rounded-[2rem] border border-line bg-white p-6 shadow-2xl shadow-ink/10 sm:p-10">
-            <div className="absolute -right-3 -top-3 h-24 w-24 rounded-full bg-signal/30 blur-2xl" />
-            <h3 className="font-display text-2xl font-bold text-ink">Request a Free Quote</h3>
-            <p className="mt-1.5 mb-8 text-sm text-muted">No obligation. No spam. Just a flat number and a deadline.</p>
-            <QuoteForm compact={compact} />
-          </div>
-        </Reveal>
       </div>
     </section>
   );

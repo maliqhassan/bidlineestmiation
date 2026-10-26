@@ -133,11 +133,11 @@ export function Footer() {
           <p>
             © <Year /> {site.legalName}. All rights reserved.
           </p>
-          <div className="flex gap-5">
-            <Link href="/privacy" className="hover:text-signal">
+          <div className="-my-2 flex gap-5">
+            <Link href="/privacy" className="py-2 hover:text-signal">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-signal">
+            <Link href="/terms" className="py-2 hover:text-signal">
               Terms of Service
             </Link>
           </div>

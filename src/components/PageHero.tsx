@@ -25,7 +25,7 @@ export function PageHero({
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-xs font-medium text-mist">
-            <Link href="/" className="hover:text-signal">
+            <Link href="/" className="-my-2 py-2 hover:text-signal">
               Home
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />

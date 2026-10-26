@@ -7,23 +7,30 @@ import { Magnetic, Reveal, SectionHeading, SpotlightCard, Stagger, StaggerItem }
 import { trades } from "@/lib/content";
 
 /** Interactive tabbed explorer of trade groups. */
-export function TradesExplorer() {
+export function TradesExplorer({ heading = true }: { heading?: boolean }) {
   const [active, setActive] = useState(0);
   const t = trades[active];
 
   return (
-    <section className="bg-blueprint relative overflow-hidden bg-ink py-24 text-white sm:py-32">
+    <section className="bg-blueprint relative overflow-hidden bg-ink py-20 text-white sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          dark
-          eyebrow="Trades & CSI Divisions"
-          title="Every Trade, Every CSI Division — Under One Roof"
-          highlight={["Every"]}
-          text="Whether you need a single-trade takeoff or a full multi-division bid, our estimators cover the complete CSI MasterFormat — from earthwork and concrete to MEP — with quantities and RSMeans zip-code pricing."
-        />
+        {heading && (
+          <SectionHeading
+            dark
+            eyebrow="Trades & CSI Divisions"
+            title="Every Trade, Every CSI Division — Under One Roof"
+            highlight={["Every"]}
+            text="Whether you need a single-trade takeoff or a full multi-division bid, our estimators cover the complete CSI MasterFormat — from earthwork and concrete to MEP — with quantities and RSMeans zip-code pricing."
+          />
+        )}
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div role="tablist" aria-label="Trade groups" className="flex flex-col gap-2">
+        <div className={`grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 ${heading ? "mt-12 sm:mt-16" : ""}`}>
+          {/* swipeable pill row on phones, vertical list on desktop */}
+          <div
+            role="tablist"
+            aria-label="Trade groups"
+            className="-mx-4 flex snap-x gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0"
+          >
             {trades.map((tr, i) => (
               <button
                 key={tr.title}
@@ -31,7 +38,9 @@ export function TradesExplorer() {
                 aria-selected={i === active}
                 onClick={() => setActive(i)}
                 onMouseEnter={() => setActive(i)}
-                className="relative flex items-center justify-between rounded-2xl px-5 py-4 text-left transition-colors"
+                className={`relative flex shrink-0 snap-start items-center justify-between rounded-2xl border px-4 py-3 text-left transition-colors lg:border-0 lg:px-5 lg:py-4 ${
+                  i === active ? "border-transparent" : "border-white/10"
+                }`}
               >
                 {i === active && (
                   <motion.span
@@ -41,17 +50,17 @@ export function TradesExplorer() {
                   />
                 )}
                 <span className="relative">
-                  <span className={`font-display block text-lg font-semibold ${i === active ? "text-white" : "text-white/60"}`}>
+                  <span className={`font-display block whitespace-nowrap text-sm font-semibold lg:text-lg ${i === active ? "text-white" : "text-white/60"}`}>
                     {tr.title}
                   </span>
-                  <span className="text-xs font-medium text-signal">{tr.divisions}</span>
+                  <span className="whitespace-nowrap text-xs font-medium text-signal">{tr.divisions}</span>
                 </span>
-                <ArrowRight className={`relative h-5 w-5 transition ${i === active ? "translate-x-0 text-signal" : "-translate-x-2 opacity-0"}`} />
+                <ArrowRight className={`relative hidden h-5 w-5 transition lg:block ${i === active ? "translate-x-0 text-signal" : "-translate-x-2 opacity-0"}`} />
               </button>
             ))}
           </div>
 
-          <div className="relative min-h-[26rem] overflow-hidden rounded-3xl border border-white/10 bg-ink-2/80 p-8 backdrop-blur sm:p-10">
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-ink-2/80 p-6 backdrop-blur sm:p-10 lg:min-h-[26rem]">
             <DivisionRing active={active} />
             <AnimatePresence mode="wait">
               <motion.div
@@ -63,8 +72,8 @@ export function TradesExplorer() {
                 className="relative"
               >
                 <p className="text-sm font-semibold uppercase tracking-widest text-flare">{t.divisions}</p>
-                <h3 className="font-display mt-2 text-3xl font-bold">{t.title}</h3>
-                <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                <h3 className="font-display mt-2 text-2xl font-bold sm:text-3xl">{t.title}</h3>
+                <ul className="mt-6 grid gap-2.5 sm:mt-8 sm:grid-cols-2 sm:gap-3">
                   {t.items.map((item, i) => (
                     <motion.li
                       key={item}
@@ -77,9 +86,9 @@ export function TradesExplorer() {
                     </motion.li>
                   ))}
                 </ul>
-                <div className="mt-10">
+                <div className="mt-8 sm:mt-10">
                   <Magnetic href="/contact" variant="primary">
-                    Get a {t.title} Quote <ArrowRight className="h-4 w-4" />
+                    Get a Quote <span className="hidden sm:inline">for {t.title}</span> <ArrowRight className="h-4 w-4" />
                   </Magnetic>
                 </div>
               </motion.div>

@@ -31,7 +31,7 @@ export function ProjectsGallery() {
           text="A snapshot of the project types and trades we estimate for GCs and subcontractors across all 50 states & Canada. Click any project to view larger."
         />
 
-        <div className="mt-16 grid auto-rows-[16rem] gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid auto-rows-[11rem] grid-cols-2 gap-3 sm:mt-16 sm:auto-rows-[16rem] sm:gap-4 lg:grid-cols-4">
           {projects.map((p, i) => (
             <motion.button
               key={p.title}
@@ -41,25 +41,25 @@ export function ProjectsGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.7, delay: (i % 4) * 0.08 }}
-              className={`group relative overflow-hidden rounded-3xl text-left ${
-                i === 0 ? "lg:col-span-2 lg:row-span-2" : i === 3 ? "lg:col-span-2" : ""
+              className={`group relative overflow-hidden rounded-2xl text-left sm:rounded-3xl ${
+                i === 0 ? "col-span-2 lg:row-span-2" : i === 3 ? "lg:col-span-2" : ""
               }`}
             >
               <Image
                 src={p.image}
                 alt={`${p.title} — ${p.meta}`}
                 fill
-                sizes="(min-width: 1024px) 50vw, (min-width: 640px) 50vw, 100vw"
+                sizes={i === 0 ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 25vw, 50vw"}
                 className="object-cover transition duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent opacity-80 transition group-hover:opacity-95" />
-              <span className="absolute left-4 top-4 rounded-full bg-signal px-3 py-1 text-xs font-bold text-ink">{p.tag}</span>
-              <span className="absolute right-4 top-4 grid h-9 w-9 scale-0 place-items-center rounded-full bg-white text-ink transition duration-300 group-hover:scale-100">
+              <span className="absolute left-3 top-3 rounded-full bg-signal px-2.5 py-1 text-[11px] font-bold text-ink sm:left-4 sm:top-4 sm:px-3 sm:text-xs">{p.tag}</span>
+              <span className="absolute right-4 top-4 hidden h-9 w-9 scale-0 place-items-center rounded-full bg-white text-ink transition duration-300 group-hover:scale-100 sm:grid">
                 <Maximize2 className="h-4 w-4" />
               </span>
-              <div className="absolute inset-x-0 bottom-0 translate-y-2 p-6 transition duration-500 group-hover:translate-y-0">
-                <h3 className="font-display text-xl font-semibold text-white">{p.title}</h3>
-                <p className="mt-1 text-sm text-signal-2">{p.meta}</p>
+              <div className="absolute inset-x-0 bottom-0 p-3.5 transition duration-500 sm:translate-y-2 sm:p-6 sm:group-hover:translate-y-0">
+                <h3 className="font-display text-sm font-semibold leading-tight text-white sm:text-xl">{p.title}</h3>
+                <p className="mt-1 text-xs text-signal-2 sm:text-sm">{p.meta}</p>
               </div>
             </motion.button>
           ))}

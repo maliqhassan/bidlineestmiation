@@ -70,11 +70,11 @@ export function StatsBand({ light = false }: { light?: boolean }) {
         <Reveal
           key={s.label}
           delay={i * 0.08}
-          className={`relative p-7 sm:p-9 ${i % 2 ? "" : light ? "border-r border-line" : "border-r border-white/10"} ${
+          className={`relative p-5 sm:p-9 ${i % 2 ? "" : light ? "border-r border-line" : "border-r border-white/10"} ${
             i < 2 ? (light ? "border-b border-line lg:border-b-0" : "border-b border-white/10 lg:border-b-0") : ""
           } ${i === 1 ? (light ? "lg:border-r lg:border-line" : "lg:border-r lg:border-white/10") : ""}`}
         >
-          <p className={`font-display text-4xl font-bold sm:text-5xl ${light ? "text-ink" : "text-gradient"}`}>
+          <p className={`font-display whitespace-nowrap text-3xl font-bold sm:text-5xl ${light ? "text-ink" : "text-gradient"}`}>
             <Counter value={s.value} prefix={s.prefix} suffix={s.suffix} />
           </p>
           <p className={`mt-2 text-sm ${light ? "text-muted" : "text-mist"}`}>{s.label}</p>

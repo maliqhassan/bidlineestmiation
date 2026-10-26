@@ -226,14 +226,17 @@ export function TakeoffDemo() {
               </button>
               <div className="grid flex-1 grid-cols-4 gap-1.5">
                 {phases.map((p, i) => (
-                  <button key={p.title} onClick={() => jump(i)} className="h-1.5 overflow-hidden rounded-full bg-white/10" aria-label={`Jump to ${p.title}`}>
-                    <motion.span
-                      key={`${cycle}-${phase}-${i}`}
-                      className="block h-full bg-signal"
-                      initial={{ width: i < phase ? "100%" : "0%" }}
-                      animate={{ width: i < phase ? "100%" : i === phase ? "100%" : "0%" }}
-                      transition={{ duration: i === phase && !paused ? PHASE_MS / 1000 : 0, ease: "linear" }}
-                    />
+                  // tall transparent button around a thin bar keeps the tap target finger-sized
+                  <button key={p.title} onClick={() => jump(i)} className="flex h-8 items-center" aria-label={`Jump to ${p.title}`}>
+                    <span className="block h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+                      <motion.span
+                        key={`${cycle}-${phase}-${i}`}
+                        className="block h-full bg-signal"
+                        initial={{ width: i < phase ? "100%" : "0%" }}
+                        animate={{ width: i < phase ? "100%" : i === phase ? "100%" : "0%" }}
+                        transition={{ duration: i === phase && !paused ? PHASE_MS / 1000 : 0, ease: "linear" }}
+                      />
+                    </span>
                   </button>
                 ))}
               </div>

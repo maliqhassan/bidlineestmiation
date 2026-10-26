@@ -19,7 +19,7 @@ export default function TradesPage() {
         highlight={["Every"]}
         text="Single-trade takeoffs for subs or full multi-division bids for GCs — from Division 02 earthwork to Division 28 low-voltage."
       />
-      <TradesExplorer />
+      <TradesExplorer heading={false} />
       <TradesGrid />
       <CtaBanner />
     </>
