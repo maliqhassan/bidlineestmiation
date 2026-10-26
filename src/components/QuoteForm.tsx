@@ -21,7 +21,7 @@ const ACCEPT = ".pdf,.dwg,.dxf,.dwf,.zip,.ifc,.png,.jpg,.jpeg";
 export function QuoteForm({ compact = false }: { compact?: boolean }) {
   const formRef = useRef<HTMLFormElement>(null);
   const fileInput = useRef<HTMLInputElement>(null);
-  // A service passed as ?service=… (from pricing / service CTAs) is pre-selected until the user picks one.
+  // A service passed as ?service=… (from service CTAs) is pre-selected until the user picks one.
   const urlService = useSyncExternalStore(noop, readServiceParam, () => "");
   const [picked, setPicked] = useState<string | null>(null);
   const service = picked ?? urlService;

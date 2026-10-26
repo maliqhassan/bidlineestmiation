@@ -59,25 +59,21 @@ export function WhyUs() {
   );
 }
 
-export function StatsBand({ light = false }: { light?: boolean }) {
+function StatsBand() {
   return (
-    <div
-      className={`mt-16 grid grid-cols-2 overflow-hidden rounded-3xl border lg:grid-cols-4 ${
-        light ? "border-line bg-white" : "border-white/10 bg-white/[0.02]"
-      }`}
-    >
+    <div className="mt-16 grid grid-cols-2 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] lg:grid-cols-4">
       {stats.map((s, i) => (
         <Reveal
           key={s.label}
           delay={i * 0.08}
-          className={`relative p-5 sm:p-9 ${i % 2 ? "" : light ? "border-r border-line" : "border-r border-white/10"} ${
-            i < 2 ? (light ? "border-b border-line lg:border-b-0" : "border-b border-white/10 lg:border-b-0") : ""
-          } ${i === 1 ? (light ? "lg:border-r lg:border-line" : "lg:border-r lg:border-white/10") : ""}`}
+          className={`relative p-5 sm:p-9 ${i % 2 ? "" : "border-r border-white/10"} ${
+            i < 2 ? "border-b border-white/10 lg:border-b-0" : ""
+          } ${i === 1 ? "lg:border-r lg:border-white/10" : ""}`}
         >
-          <p className={`font-display whitespace-nowrap text-3xl font-bold sm:text-5xl ${light ? "text-ink" : "text-gradient"}`}>
+          <p className="font-display whitespace-nowrap text-3xl font-bold text-gradient sm:text-5xl">
             <Counter value={s.value} prefix={s.prefix} suffix={s.suffix} />
           </p>
-          <p className={`mt-2 text-sm ${light ? "text-muted" : "text-mist"}`}>{s.label}</p>
+          <p className="mt-2 text-sm text-mist">{s.label}</p>
         </Reveal>
       ))}
     </div>

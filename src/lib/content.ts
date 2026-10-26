@@ -3,7 +3,7 @@ const img = (id: string, w = 1200) =>
 
 export const images = {
   hero: img("1541888946425-d81bb19240f5", 1800),
-  about: img("1581092918056-0c4c3acd3789"),
+  about: "/images/about.jpg",
   walkthrough: img("1541888946425-d81bb19240f5"),
 };
 
@@ -208,42 +208,6 @@ export const deliverables = [
     title: "PlanSwift & Bluebeam Markups",
     sub: "Auditable source files",
     text: "Native PlanSwift & Bluebeam markup files so your team can verify every measurement against the plans — nothing is a black box, and free revisions are included.",
-  },
-];
-
-export const plans = [
-  {
-    name: "Quantity / Material Takeoff",
-    price: "$199",
-    unit: "/ trade",
-    blurb: "Digitized, verifiable quantities for any trade — perfect for subs pricing their own labor.",
-    features: [
-      "EA, LF, SF, CY, ton quantities — all 50 CSI divisions",
-      "PlanSwift & Bluebeam markup files included",
-      "Excel & PDF deliverables in 24–48h",
-      "RSMeans zip-code material pricing option",
-      "Free revision within 7 days",
-    ],
-    cta: "Get Takeoff Quote",
-    service: "Quantity / Material Takeoff",
-    featured: false,
-  },
-  {
-    name: "Complete Bid Estimate",
-    price: "$499",
-    unit: "/ project",
-    blurb: "Bid-ready package with everything priced — walk straight into your bid meeting confident.",
-    lead: "Everything in Quantity Takeoff, plus:",
-    features: [
-      "Full labor, equipment & overhead costing",
-      "RSMeans zip-code labor rates applied",
-      "Bid-ready proposal & executive summary",
-      "Subcontractor quote comparison sheet",
-      "2 revision rounds + priority 24h turnaround",
-    ],
-    cta: "Get Bid Quote",
-    service: "Complete Bid Estimate",
-    featured: true,
   },
 ];
 

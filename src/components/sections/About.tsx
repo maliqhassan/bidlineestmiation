@@ -23,10 +23,10 @@ export function AboutSection({ full = false }: { full?: boolean }) {
             <motion.div style={{ y: imgY }} className="absolute -inset-y-[10%] inset-x-0">
               <Image
                 src={images.about}
-                alt="Estimator reviewing construction blueprints for a quantity takeoff"
+                alt="Estimator checking cost figures with a calculator and printed reports"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
+                className="object-cover object-top"
               />
             </motion.div>
             <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />

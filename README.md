@@ -15,9 +15,9 @@ npm run build && npm start
 | What | File |
 | --- | --- |
 | Company name, phone, emails, address, socials, **logo** | `src/lib/site.ts` |
-| All page copy (services, trades, FAQ, pricing, projects…) | `src/lib/content.ts` |
+| All page copy (services, trades, FAQ, projects…) | `src/lib/content.ts` |
 | Colors, fonts, keyframes | `src/app/globals.css` (`@theme` block) |
-| Pages | `src/app/<route>/page.tsx` — `/`, `/about`, `/services`, `/trades`, `/process`, `/pricing`, `/faq`, `/contact`, `/privacy`, `/terms` |
+| Pages | `src/app/<route>/page.tsx` — `/`, `/about`, `/services`, `/trades`, `/process`, `/faq`, `/contact`, `/privacy`, `/terms` |
 | Reusable motion primitives (Reveal, SplitText, Counter, Magnetic, SpotlightCard, Marquee) | `src/components/ui/motion.tsx` |
 | Quote form / email API | `src/components/QuoteForm.tsx`, `src/app/api/contact/route.ts` |
 

@@ -20,7 +20,6 @@ const companyLinks = [
   { href: "/process", label: "Our Process" },
   { href: "/services", label: "Services" },
   { href: "/trades", label: "Trades & Divisions" },
-  { href: "/pricing", label: "Pricing" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
