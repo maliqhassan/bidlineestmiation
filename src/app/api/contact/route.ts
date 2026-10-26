@@ -3,7 +3,8 @@ import { serviceOptions } from "@/lib/content";
 import { site } from "@/lib/site";
 
 const MAX_FILES = 5;
-const MAX_TOTAL_BYTES = 20 * 1024 * 1024;
+// Vercel rejects request bodies over ~4.5 MB, so keep attachments under that
+const MAX_TOTAL_BYTES = 4 * 1024 * 1024;
 
 const escape = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
@@ -78,9 +79,10 @@ export async function POST(request: Request) {
     });
 
     await transporter.sendMail({
-      from: CONTACT_FROM || SMTP_USER,
+      // Hostinger (and most providers) require the sender to be the authenticated mailbox
+      from: CONTACT_FROM || { name: `${site.name} Website`, address: SMTP_USER },
       to: CONTACT_TO || site.emails[0],
-      replyTo: `${data.name} <${data.email}>`,
+      replyTo: { name: data.name, address: data.email },
       subject: `Quote request: ${data.service} — ${data.name}`,
       text: rows.map(([k, v]) => `${k}: ${v}`).join("\n") + `\n\n${data.details}`,
       html,

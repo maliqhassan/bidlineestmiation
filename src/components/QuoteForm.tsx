@@ -15,7 +15,8 @@ type Errors = Partial<Record<"name" | "email" | "service" | "details" | "files",
 type Status = "idle" | "sending" | "sent" | "error";
 
 const MAX_FILES = 5;
-const MAX_TOTAL_MB = 20;
+// must stay under Vercel's ~4.5 MB request limit (matches the API route)
+const MAX_TOTAL_MB = 4;
 const ACCEPT = ".pdf,.dwg,.dxf,.dwf,.zip,.ifc,.png,.jpg,.jpeg";
 
 export function QuoteForm({ compact = false }: { compact?: boolean }) {
@@ -66,6 +67,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
     setStatus("sending");
     try {
       const res = await fetch("/api/contact", { method: "POST", body: fd });
+      if (res.status === 413) throw new Error("Your files are too large to upload — please paste a Dropbox / Drive link in the project details instead.");
       const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
       if (!res.ok || !data.ok) throw new Error(data.error || "Something went wrong. Please try again.");
       setStatus("sent");

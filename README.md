@@ -23,12 +23,24 @@ npm run build && npm start
 
 ### Adding the logo
 
-Put the file in `public/` (e.g. `public/logo.png`) and set `logo: "/logo.png"` in `src/lib/site.ts`. Replace `src/app/favicon.ico` too.
+Put the file in `public/` (e.g. `public/logo.png`) and set `logo: "/logo.png"` in `src/lib/site.ts`. Browser-tab icons are `src/app/icon.png` and `src/app/apple-icon.png`.
 
 ### Quote form email
 
-Copy `.env.example` to `.env.local` and fill in SMTP credentials. Without them, submissions are logged to the console in dev; in production the form shows an error pointing visitors to your phone/email.
+Every form submission is emailed to `CONTACT_TO` (default: the first email in `src/lib/site.ts`), sent through the Hostinger mailbox via SMTP. Replying to the email replies to the visitor.
 
-Note: serverless hosts cap request bodies (Vercel: ~4.5 MB), so large plan uploads will fail there — visitors can paste a Dropbox/Drive link instead, or lower `MAX_TOTAL_MB` in the form.
+**On Vercel**, add these under Project → Settings → Environment Variables, then redeploy:
+
+| Name | Value |
+| --- | --- |
+| `SMTP_HOST` | `smtp.hostinger.com` |
+| `SMTP_PORT` | `465` |
+| `SMTP_USER` | `info@bidlineestimatingsolutions.com` |
+| `SMTP_PASS` | the mailbox password |
+| `CONTACT_TO` | `info@bidlineestimatingsolutions.com` |
+
+Locally, copy `.env.example` to `.env.local` instead. Without these settings, submissions are logged to the console in dev; in production the form shows an error pointing visitors to your phone/email.
+
+Uploads are capped at 4 MB total because Vercel rejects larger requests — visitors can paste a Dropbox/Drive link for bigger plan sets.
 
 All animations respect the visitor's "reduce motion" OS setting.

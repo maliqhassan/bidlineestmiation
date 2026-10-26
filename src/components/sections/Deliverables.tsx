@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { FileSpreadsheet, FileText, PenTool } from "lucide-react";
 import { SectionHeading, SpotlightCard, Stagger, StaggerItem } from "@/components/ui/motion";
 import { deliverables } from "@/lib/content";
+import { SampleEstimate } from "./SampleEstimate";
 
 const icons = [FileSpreadsheet, FileText, PenTool];
 const inView = { initial: "hidden", whileInView: "show", viewport: { once: true } } as const;
@@ -153,6 +154,7 @@ export function Deliverables() {
             );
           })}
         </Stagger>
+        <SampleEstimate />
       </div>
     </section>
   );

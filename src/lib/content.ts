@@ -269,3 +269,55 @@ export const serviceAreas = [
   "New York", "Texas", "California", "Florida", "Utah",
   "Colorado", "Arizona", "Georgia", "Illinois", "Washington", "Pennsylvania", "Ohio", "North Carolina",
 ];
+
+// Sample estimate shown in the "What You Get" section. Client name and address
+// are deliberately anonymized — the site promises confidentiality.
+export const sampleEstimate = {
+  project: "Luxury Retail Temporary Store",
+  location: "Honolulu, HI",
+  scope: "Interior build-out · everything as per scope",
+  gsf: 2102,
+  costPerSf: 159,
+  lineItems: 165,
+  laborHours: 1167,
+  laborRate: 112.5,
+  laborCost: 131308,
+  materialCost: 159300,
+  lumpSum: 43000,
+  tradeCost: 333608,
+  baseBid: 437027,
+  divisions: [
+    { code: "01", name: "General Requirements", cost: 43000 },
+    { code: "02", name: "Existing Conditions", cost: 20741 },
+    { code: "05", name: "Metals", cost: 14885 },
+    { code: "06", name: "Wood, Plastics & Composites", cost: 2475 },
+    { code: "08", name: "Openings", cost: 6657 },
+    { code: "09", name: "Finishes", cost: 108231 },
+    { code: "10", name: "Specialties", cost: 5625 },
+    { code: "11", name: "Equipment", cost: 14754 },
+    { code: "12", name: "Furnishings", cost: 59957 },
+    { code: "22", name: "Plumbing", cost: 2034 },
+    { code: "26", name: "Electrical", cost: 55249 },
+  ],
+  markups: [
+    { label: "Contingency", rate: "5%", amount: 16680 },
+    { label: "Overhead", rate: "10%", amount: 33361 },
+    { label: "Profit", rate: "10%", amount: 33361 },
+    { label: "Tax", rate: "4.5%", amount: 15012 },
+    { label: "Performance & payment bonds", rate: "1.5%", amount: 5004 },
+  ],
+  // Excerpt of real line items from the estimate
+  rows: [
+    { div: "09", desc: "WC3 — Wall covering, Desert Dunes 8042 Sunbaked (Phillip Jeffries)", qty: 429, waste: "5%", qtyW: 451, unit: "SF", hrs: 99.1, labor: 11150.7, material: 12502.3, total: 23653 },
+    { div: "26", desc: "L2 — Spot light, Solais LCS-1, 11W, 3500K, 95 CRI", qty: 45, waste: "0%", qtyW: 45, unit: "EA", hrs: 33.8, labor: 3796.9, material: 6412.5, total: 10209 },
+    { div: "05", desc: "(2) 1 5/8\" x 3 5/8\" metal stud wall @ 16\" O.C. (12'-0\"H)", qty: 162, waste: "5%", qtyW: 171, unit: "LF", hrs: 9.5, labor: 1074.3, material: 1296.0, total: 2370 },
+    { div: "09", desc: "5/8\" gypsum wall board", qty: 872, waste: "5%", qtyW: 916, unit: "SF", hrs: 16.5, labor: 1854.1, material: 1602.3, total: 3456 },
+    { div: "02", desc: "Existing cove light to be removed", qty: 180, waste: "0%", qtyW: 180, unit: "LF", hrs: 26.9, labor: 3031.1, material: 0, total: 3031 },
+    { div: "05", desc: "5x5x3/8 HSS steel column (12'-0\"H)", qty: 535, waste: "5%", qtyW: 562, unit: "LBS", hrs: 8.4, labor: 948.3, material: 1011.5, total: 1960 },
+    { div: "09", desc: "PT1 — Wall paint, Benjamin Moore OC-69 (flat)", qty: 1127, waste: "5%", qtyW: 1183, unit: "SF", hrs: 33.1, labor: 3726.4, material: 1685.8, total: 5412 },
+    { div: "12", desc: "LAM-1 — White laminate work station counter", qty: 32, waste: "5%", qtyW: 33, unit: "SF", hrs: 6.6, labor: 744.4, material: 4218.4, total: 4963 },
+    { div: "22", desc: "2\" dia. sanitary waste pipe", qty: 9, waste: "5%", qtyW: 10, unit: "LF", hrs: 2.0, labor: 223.5, material: 192.2, total: 416 },
+    { div: "26", desc: "Mini dome camera provision", qty: 20, waste: "0%", qtyW: 20, unit: "EA", hrs: 24.0, labor: 2700.0, material: 3300.0, total: 6000 },
+    { div: "26", desc: "Double gang tel/data outlet", qty: 30, waste: "0%", qtyW: 30, unit: "EA", hrs: 21.0, labor: 2362.5, material: 1260.0, total: 3623 },
+  ],
+};
