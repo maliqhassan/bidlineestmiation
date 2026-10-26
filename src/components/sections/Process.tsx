@@ -50,7 +50,7 @@ function Step({ index, progress }: { index: number; progress: MotionValue<number
   const at = index / (processSteps.length - 1);
   const lit = useTransform(progress, [Math.max(0, at - 0.08), at], [0, 1]);
   const scale = useTransform(lit, [0, 1], [0.8, 1]);
-  const bg = useTransform(lit, [0, 1], ["#ffffff", "#14e0c4"]);
+  const bg = useTransform(lit, [0, 1], ["#ffffff", "#1a8cff"]);
   const opacity = useTransform(lit, [0, 1], [0.35, 1]);
   // vertical slide: a horizontal one pushes cards off-screen on phones
   const y = useTransform(lit, [0, 1], [32, 0]);

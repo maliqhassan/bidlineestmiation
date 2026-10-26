@@ -64,7 +64,7 @@ export async function POST(request: Request) {
   const html = `
     <h2 style="font-family:sans-serif">New quote request</h2>
     <table style="font-family:sans-serif;border-collapse:collapse">
-      ${rows.map(([k, v]) => `<tr><td style="padding:6px 12px;color:#5f6b77">${k}</td><td style="padding:6px 12px"><b>${escape(v)}</b></td></tr>`).join("")}
+      ${rows.map(([k, v]) => `<tr><td style="padding:6px 12px;color:#5a6676">${k}</td><td style="padding:6px 12px"><b>${escape(v)}</b></td></tr>`).join("")}
     </table>
     <h3 style="font-family:sans-serif">Project details</h3>
     <p style="font-family:sans-serif;white-space:pre-wrap">${escape(data.details)}</p>`;

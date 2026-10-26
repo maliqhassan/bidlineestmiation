@@ -87,10 +87,10 @@ function EstimateCard() {
       {/* rotating 360° orbit */}
       <div className="absolute left-1/2 top-1/2 -z-10 h-[125%] w-[125%] -translate-x-1/2 -translate-y-1/2">
         <svg viewBox="0 0 400 400" className="h-full w-full animate-spin-slow" aria-hidden>
-          <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(20,224,196,0.25)" strokeDasharray="2 10" />
-          <circle cx="200" cy="200" r="160" fill="none" stroke="rgba(255,107,53,0.2)" strokeDasharray="60 30" />
-          <circle cx="200" cy="10" r="5" fill="#14e0c4" />
-          <circle cx="40" cy="200" r="4" fill="#ff6b35" />
+          <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(26, 140, 255,0.25)" strokeDasharray="2 10" />
+          <circle cx="200" cy="200" r="160" fill="none" stroke="rgba(47, 107, 255,0.2)" strokeDasharray="60 30" />
+          <circle cx="200" cy="10" r="5" fill="#1a8cff" />
+          <circle cx="40" cy="200" r="4" fill="#2f6bff" />
         </svg>
       </div>
 
@@ -101,7 +101,7 @@ function EstimateCard() {
       >
         <motion.div
           style={{ rotateX: rx, rotateY: ry, transformStyle: "preserve-3d" }}
-          className="relative rounded-3xl border border-white/10 bg-ink-2/80 p-6 shadow-[0_40px_120px_-30px_rgba(20,224,196,0.35)] backdrop-blur-xl sm:p-7"
+          className="relative rounded-3xl border border-white/10 bg-ink-2/80 p-6 shadow-[0_40px_120px_-30px_rgba(26, 140, 255,0.35)] backdrop-blur-xl sm:p-7"
         >
           <div className="flex items-center justify-between">
             <div>

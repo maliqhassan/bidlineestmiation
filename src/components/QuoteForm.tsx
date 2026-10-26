@@ -99,9 +99,9 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
             className="flex min-h-[28rem] flex-col items-center justify-center text-center"
           >
             <svg viewBox="0 0 80 80" className="h-24 w-24">
-              <motion.circle cx="40" cy="40" r="36" fill="none" stroke="#14e0c4" strokeWidth="4"
+              <motion.circle cx="40" cy="40" r="36" fill="none" stroke="#1a8cff" strokeWidth="4"
                 initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.7 }} />
-              <motion.path d="M24 41 L35 52 L57 29" fill="none" stroke="#14e0c4" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"
+              <motion.path d="M24 41 L35 52 L57 29" fill="none" stroke="#1a8cff" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"
                 initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.6, duration: 0.5 }} />
             </svg>
             <h3 className="font-display mt-6 text-2xl font-bold text-ink">Request Received!</h3>

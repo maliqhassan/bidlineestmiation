@@ -18,8 +18,8 @@ export const site = {
   address: "Your office address, City, ST 00000",
   hours: "Mon–Fri · 8 AM – 6 PM",
   support: "24/7 customer support — rush estimates welcome round the clock.",
-  // Set to e.g. "/logo.png" once the logo file is in /public. Leave null to use the built-in wordmark.
-  logo: null as string | null,
+  // Logo mark in /public. Set to null to fall back to the built-in SVG mark.
+  logo: "/logo.png" as string | null,
   // Leave a link empty to hide that icon in the footer
   social: {
     facebook: "",

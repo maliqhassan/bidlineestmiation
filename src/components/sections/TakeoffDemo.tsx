@@ -23,11 +23,11 @@ const walls = [
 ];
 
 const rooms = [
-  { x: 40, y: 40, w: 220, h: 190, name: "Open Office", sf: "594 SF", price: "$61.2K", color: "rgba(20,224,196,0.18)" },
-  { x: 260, y: 40, w: 300, h: 100, name: "Conference", sf: "300 SF", price: "$34.8K", color: "rgba(124,245,227,0.16)" },
-  { x: 260, y: 140, w: 300, h: 90, name: "Break Room", sf: "270 SF", price: "$29.5K", color: "rgba(255,154,107,0.18)" },
-  { x: 40, y: 230, w: 360, h: 130, name: "Lobby", sf: "364 SF", price: "$38.9K", color: "rgba(255,107,53,0.16)" },
-  { x: 400, y: 230, w: 160, h: 130, name: "Restrooms", sf: "136 SF", price: "$19.85K", color: "rgba(20,224,196,0.12)" },
+  { x: 40, y: 40, w: 220, h: 190, name: "Open Office", sf: "594 SF", price: "$61.2K", color: "rgba(26, 140, 255,0.18)" },
+  { x: 260, y: 40, w: 300, h: 100, name: "Conference", sf: "300 SF", price: "$34.8K", color: "rgba(76, 195, 255,0.16)" },
+  { x: 260, y: 140, w: 300, h: 90, name: "Break Room", sf: "270 SF", price: "$29.5K", color: "rgba(141, 180, 255,0.18)" },
+  { x: 40, y: 230, w: 360, h: 130, name: "Lobby", sf: "364 SF", price: "$38.9K", color: "rgba(47, 107, 255,0.16)" },
+  { x: 400, y: 230, w: 160, h: 130, name: "Restrooms", sf: "136 SF", price: "$19.85K", color: "rgba(26, 140, 255,0.12)" },
 ];
 
 const fixtures = [
@@ -81,7 +81,7 @@ export function TakeoffDemo() {
 
         <div ref={ref} className="mt-16 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
           {/* "screen" */}
-          <div className="overflow-hidden rounded-3xl border border-white/10 bg-ink-2 shadow-[0_40px_100px_-30px_rgba(20,224,196,0.3)]">
+          <div className="overflow-hidden rounded-3xl border border-white/10 bg-ink-2 shadow-[0_40px_100px_-30px_rgba(26, 140, 255,0.3)]">
             <div className="flex items-center gap-3 border-b border-white/10 px-5 py-3">
               <span className="flex gap-1.5">
                 <span className="h-3 w-3 rounded-full bg-flare/80" />
@@ -120,7 +120,7 @@ export function TakeoffDemo() {
                   <motion.path
                     key={d}
                     d={d}
-                    stroke={phase === 0 ? "#14e0c4" : "rgba(255,255,255,0.75)"}
+                    stroke={phase === 0 ? "#1a8cff" : "rgba(255,255,255,0.75)"}
                     strokeWidth={i === 0 ? 5 : 3.5}
                     strokeLinecap="square"
                     initial={{ pathLength: 0 }}
@@ -130,13 +130,13 @@ export function TakeoffDemo() {
                 ))}
 
                 {/* dimensions */}
-                <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.4 }} stroke="#ff6b35" strokeWidth="1">
+                <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.4 }} stroke="#2f6bff" strokeWidth="1">
                   <path d="M40 22 H560 M40 16 V28 M560 16 V28" />
                   <path d="M580 40 V360 M574 40 H586 M574 360 H586" />
-                  <text x="300" y="15" fill="#ff9a6b" stroke="none" fontSize="12" textAnchor="middle" fontFamily="monospace">
+                  <text x="300" y="15" fill="#8db4ff" stroke="none" fontSize="12" textAnchor="middle" fontFamily="monospace">
                     52&apos;-0&quot;
                   </text>
-                  <text x="590" y="205" fill="#ff9a6b" stroke="none" fontSize="12" fontFamily="monospace" transform="rotate(90 590 205)" textAnchor="middle">
+                  <text x="590" y="205" fill="#8db4ff" stroke="none" fontSize="12" fontFamily="monospace" transform="rotate(90 590 205)" textAnchor="middle">
                     32&apos;-0&quot;
                   </text>
                 </motion.g>
@@ -152,7 +152,7 @@ export function TakeoffDemo() {
                     <text x={r.x + r.w / 2} y={r.y + r.h / 2 - 4} fill="#fff" fontSize="12" fontWeight="600" textAnchor="middle">
                       {r.name}
                     </text>
-                    <text x={r.x + r.w / 2} y={r.y + r.h / 2 + 12} fill="#7cf5e3" fontSize="11" textAnchor="middle" fontFamily="monospace">
+                    <text x={r.x + r.w / 2} y={r.y + r.h / 2 + 12} fill="#4cc3ff" fontSize="11" textAnchor="middle" fontFamily="monospace">
                       {phase >= 3 ? r.price : r.sf}
                     </text>
                   </motion.g>
@@ -167,7 +167,7 @@ export function TakeoffDemo() {
                     transition={{ delay: phase === 2 ? i * 0.15 : 0, type: "spring", stiffness: 400, damping: 15 }}
                     style={{ transformOrigin: `${cx}px ${cy}px` }}
                   >
-                    <circle cx={cx} cy={cy} r="9" fill="rgba(255,107,53,0.25)" stroke="#ff6b35" strokeWidth="1.5" />
+                    <circle cx={cx} cy={cy} r="9" fill="rgba(47, 107, 255,0.25)" stroke="#2f6bff" strokeWidth="1.5" />
                     <path d={`M${cx - 4} ${cy} H${cx + 4} M${cx} ${cy - 4} V${cy + 4}`} stroke="#fff" strokeWidth="1.5" />
                   </motion.g>
                 ))}
@@ -175,7 +175,7 @@ export function TakeoffDemo() {
                 {/* pricing pulse */}
                 {phase === 3 && (
                   <motion.rect
-                    x="40" y="40" width="520" height="320" stroke="#14e0c4" strokeWidth="2" rx="4"
+                    x="40" y="40" width="520" height="320" stroke="#1a8cff" strokeWidth="2" rx="4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: [0, 1, 0.3, 1] }}
                     transition={{ duration: 1.6 }}

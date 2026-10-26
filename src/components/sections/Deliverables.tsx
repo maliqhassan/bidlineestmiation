@@ -29,9 +29,9 @@ function SheetMock() {
 }
 
 const segs = [
-  { v: 0.38, c: "#14e0c4" },
-  { v: 0.27, c: "#ff6b35" },
-  { v: 0.2, c: "#7cf5e3" },
+  { v: 0.38, c: "#1a8cff" },
+  { v: 0.27, c: "#2f6bff" },
+  { v: 0.2, c: "#4cc3ff" },
   { v: 0.15, c: "#ffffff55" },
 ].map((s, i, all) => ({ ...s, offset: all.slice(0, i).reduce((sum, x) => sum + x.v, 0) }));
 
@@ -86,7 +86,7 @@ function MarkupMock() {
         transition={{ duration: 1.2 }}
       />
       <motion.rect
-        x="14" y="14" width="112" height="42" fill="rgba(20,224,196,0.25)" stroke="#14e0c4"
+        x="14" y="14" width="112" height="42" fill="rgba(26, 140, 255,0.25)" stroke="#1a8cff"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -94,7 +94,7 @@ function MarkupMock() {
       />
       <motion.path
         d="M140 100 L200 20"
-        stroke="#ff6b35"
+        stroke="#2f6bff"
         strokeWidth="2"
         strokeDasharray="5 4"
         initial={{ pathLength: 0 }}
@@ -106,7 +106,7 @@ function MarkupMock() {
         initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1.4 }}>
         420 SF
       </motion.text>
-      <motion.text x="186" y="70" fill="#ff9a6b" fontSize="10" fontFamily="monospace"
+      <motion.text x="186" y="70" fill="#8db4ff" fontSize="10" fontFamily="monospace"
         initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 2 }}>
         18 LF
       </motion.text>
