@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { SectionHeading } from "@/components/ui/motion";
 import { processSteps } from "@/lib/content";
 
-const icons = [Upload, BadgeDollarSign, Ruler, Trophy];
+const icons = [BadgeDollarSign, Upload, Ruler, Trophy];
 
 /** Vertical timeline whose rail fills as you scroll; each step lights up when reached. */
 export function ProcessTimeline({ heading = true }: { heading?: boolean }) {

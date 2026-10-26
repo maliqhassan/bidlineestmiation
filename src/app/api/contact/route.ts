@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import nodemailer from "nodemailer";
 import { serviceOptions } from "@/lib/content";
 import { site } from "@/lib/site";
@@ -10,6 +11,20 @@ const escape = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
 const json = (body: object, status = 200) => Response.json(body, { status });
+
+const REQUIRED_ENV = ["SMTP_HOST", "SMTP_USER", "SMTP_PASS"] as const;
+
+// Setup check: open /api/contact in a browser to see which email settings the live
+// deployment can read. Reports names and true/false only — never the values.
+export async function GET() {
+  await connection(); // evaluate at request time, not at build time
+  const has = (k: string) => Boolean(process.env[k]?.trim());
+  const settings = Object.fromEntries(
+    [...REQUIRED_ENV, "SMTP_PORT", "CONTACT_TO", "CONTACT_FROM"].map((k) => [k, has(k)]),
+  );
+  const missing = REQUIRED_ENV.filter((k) => !has(k));
+  return json({ emailConfigured: missing.length === 0, missing, settings });
+}
 
 export async function POST(request: Request) {
   let fd: FormData;
@@ -51,7 +66,7 @@ export async function POST(request: Request) {
 
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
     // Names only — never log secret values. Shows up in Vercel → Logs.
-    const missing = (["SMTP_HOST", "SMTP_USER", "SMTP_PASS"] as const).filter((k) => !env(k));
+    const missing = REQUIRED_ENV.filter((k) => !env(k));
     console.error(`[contact] Missing environment variable(s): ${missing.join(", ")}. Add them for the Production environment in Vercel and redeploy.`);
     if (process.env.NODE_ENV !== "production") {
       console.info("[contact] SMTP not configured — submission logged only:", { ...data, files: files.map((f) => f.name) });

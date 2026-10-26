@@ -141,20 +141,20 @@ export const trades = [
 
 export const processSteps = [
   {
-    title: "Upload Your Plans",
-    text: "Send PDF, DWG, DXF or IFC files — or share a Procore, PlanGrid, Dropbox or Google Drive link. Addenda and specs welcome.",
+    title: "Get a Detailed Quote for Your Project",
+    text: "Our team will review your plans and drawings based on your scope of work and provide a detailed quotation with pricing and turnaround time.",
   },
   {
-    title: "Get a Flat Quote in 1 Hour",
-    text: "We review scope and send a fixed price with turnaround time and invoice. No hidden fees — ever.",
+    title: "Upload Your Plans & Drawings",
+    text: "Upload your plans in PDF, DWG, DXF, or IFC format, or share a link via Procore, PlanGrid, Dropbox, or Google Drive. Include project specifications and addenda to help us prepare an accurate, detailed quotation.",
   },
   {
-    title: "Takeoff & Estimate Built",
-    text: "Our dedicated estimator performs the quantity takeoff, applies RSMeans zip-code pricing, and QA-checks every line item.",
+    title: "Detailed Takeoff & Cost Estimate",
+    text: "Our estimating team reviews your plans, prepares detailed quantity takeoffs, applies location-based pricing, and carefully checks each line item to help ensure accuracy and completeness.",
   },
   {
-    title: "Review, Adjust & Win",
-    text: "Receive Excel & PDF deliverables with markups. Request free revisions, then submit your bid with confidence.",
+    title: "Review, Finalize & Bid With Confidence",
+    text: "Receive detailed estimates in Excel and PDF formats, complete with marked-up drawings. Request revisions as needed, finalize your numbers, and submit your bid with confidence.",
   },
 ];
 
