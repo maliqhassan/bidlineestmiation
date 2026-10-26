@@ -44,7 +44,7 @@ export function BlueprintBackground({ intensity = 1 }: { intensity?: number }) {
         fill="none"
         strokeLinecap="round"
       >
-        <g stroke="rgba(26, 140, 255,0.35)" strokeWidth="1.5">
+        <g stroke="rgba(20,224,196,0.35)" strokeWidth="1.5">
           {/* outer walls */}
           <motion.path d="M720 120 H1120 V560 H720 Z" {...draw(0.2)} />
           {/* interior walls */}
@@ -58,18 +58,18 @@ export function BlueprintBackground({ intensity = 1 }: { intensity?: number }) {
         </g>
 
         {/* dimension lines */}
-        <g stroke="rgba(47, 107, 255,0.6)" strokeWidth="1">
+        <g stroke="rgba(255,107,53,0.6)" strokeWidth="1">
           <motion.path d="M720 90 H1120 M720 82 V98 M1120 82 V98" {...draw(2.4, 1)} />
           <motion.path d="M1150 120 V560 M1142 120 H1158 M1142 560 H1158" {...draw(2.7, 1)} />
         </g>
         <motion.text
-          x="920" y="80" textAnchor="middle" fill="rgba(47, 107, 255,0.85)" fontSize="13" fontFamily="monospace"
+          x="920" y="80" textAnchor="middle" fill="rgba(255,107,53,0.85)" fontSize="13" fontFamily="monospace"
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.2 }}
         >
           40&apos;-0&quot;
         </motion.text>
         <motion.text
-          x="1170" y="345" fill="rgba(47, 107, 255,0.85)" fontSize="13" fontFamily="monospace"
+          x="1170" y="345" fill="rgba(255,107,53,0.85)" fontSize="13" fontFamily="monospace"
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.4 }}
         >
           44&apos;-0&quot;
@@ -77,7 +77,7 @@ export function BlueprintBackground({ intensity = 1 }: { intensity?: number }) {
 
         {/* area highlight that pulses once the plan has drawn */}
         <motion.rect
-          x="722" y="122" width="196" height="176" fill="rgba(26, 140, 255,0.08)"
+          x="722" y="122" width="196" height="176" fill="rgba(20,224,196,0.08)"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1, 0.4, 1] }}
           transition={{ delay: 3, duration: 2.4, repeat: Infinity, repeatType: "reverse" }}
@@ -88,7 +88,7 @@ export function BlueprintBackground({ intensity = 1 }: { intensity?: number }) {
           [720, 120], [1120, 120], [1120, 560], [720, 560], [920, 300], [920, 420],
         ].map(([cx, cy], i) => (
           <motion.circle
-            key={i} cx={cx} cy={cy} r="4" fill="#1a8cff"
+            key={i} cx={cx} cy={cy} r="4" fill="#14e0c4"
             initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1 + i * 0.2, type: "spring" }}
           />
         ))}

@@ -116,13 +116,13 @@ function DivisionRing({ active }: { active: number }) {
           cy="100"
           r="80"
           fill="none"
-          stroke={i === active ? "#1a8cff" : "rgba(255,255,255,0.15)"}
+          stroke={i === active ? "#14e0c4" : "rgba(255,255,255,0.15)"}
           strokeWidth={i === active ? 10 : 6}
           strokeDasharray="76 427"
           strokeDashoffset={-i * 84}
         />
       ))}
-      <circle cx="100" cy="100" r="58" fill="none" stroke="rgba(47, 107, 255,0.4)" strokeDasharray="2 6" />
+      <circle cx="100" cy="100" r="58" fill="none" stroke="rgba(255,107,53,0.4)" strokeDasharray="2 6" />
     </motion.svg>
   );
 }
@@ -138,7 +138,7 @@ export function TradesGrid() {
         <Stagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {trades.map((t) => (
             <StaggerItem key={t.title}>
-              <SpotlightCard className="h-full rounded-3xl border border-line bg-white p-7" glow="rgba(47, 107, 255,0.14)">
+              <SpotlightCard className="h-full rounded-3xl border border-line bg-white p-7" glow="rgba(255,107,53,0.14)">
                 <p className="text-xs font-semibold uppercase tracking-widest text-flare">{t.divisions}</p>
                 <h3 className="font-display mt-2 text-xl font-semibold text-ink">{t.title}</h3>
                 <ul className="mt-5 space-y-2 text-sm text-muted">

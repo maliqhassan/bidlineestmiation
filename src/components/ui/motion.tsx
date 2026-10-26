@@ -232,7 +232,7 @@ export function SpotlightCard({
   children,
   className = "",
   tilt = true,
-  glow = "rgba(26, 140, 255,0.18)",
+  glow = "rgba(20,224,196,0.18)",
 }: {
   children: ReactNode;
   className?: string;
