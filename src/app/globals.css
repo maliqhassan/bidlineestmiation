@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* Palette: graphite + signal teal + safety orange */
+@theme {
+  --color-ink: #0b0f14;
+  --color-ink-2: #121821;
+  --color-ink-3: #1b2430;
+  --color-ink-4: #263241;
+  --color-signal: #14e0c4;
+  --color-signal-2: #7cf5e3;
+  --color-signal-deep: #0b9e8b;
+  --color-flare: #ff6b35;
+  --color-flare-2: #ff9a6b;
+  --color-paper: #f3f5f4;
+  --color-line: #e1e6e4;
+  --color-muted: #5f6b77;
+  --color-mist: #9aa7b4;
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+
+  --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
+  --animate-spin-slow: spin 24s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.4s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+  --animate-shine: shine 3.5s ease-in-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 0.7; }
+    100% { transform: scale(2.2); opacity: 0; }
+  }
+  @keyframes shine {
+    0% { transform: translateX(-120%) skewX(-20deg); }
+    60%, 100% { transform: translateX(220%) skewX(-20deg); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-signal);
+  color: var(--color-ink);
+}
+
+@utility font-display {
+  font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Blueprint grid for dark surfaces */
+@utility bg-blueprint {
+  background-image:
+    linear-gradient(rgba(20, 224, 196, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 224, 196, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(20, 224, 196, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 224, 196, 0.035) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+}
+
+/* Faint grid for light surfaces */
+@utility bg-grid-light {
+  background-image:
+    linear-gradient(rgba(11, 15, 20, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 15, 20, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility text-gradient {
+  background: linear-gradient(100deg, var(--color-signal) 0%, var(--color-signal-2) 45%, var(--color-flare) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility mask-fade-x {
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+@utility mask-fade-b {
+  mask-image: linear-gradient(180deg, #000 60%, transparent);
+}
+
+/* Page transition (see app/template.tsx) */
+.page-curtain {
+  transform-origin: top;
+  animation: curtain 0.7s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+.page-enter {
+  animation: page-enter 0.6s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes curtain {
+  from { transform: scaleY(1); }
+  to { transform: scaleY(0); }
+}
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
