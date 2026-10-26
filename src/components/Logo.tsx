@@ -9,7 +9,7 @@ export function Logo({ dark = true }: { dark?: boolean }) {
   return (
     <span className="flex items-center gap-2.5">
       {site.logo ? (
-        <Image src={site.logo} alt="" width={436} height={241} className="h-10 w-auto" priority />
+        <Image src={site.logo} alt="" width={211} height={120} className="h-10 w-auto" priority />
       ) : (
         <svg viewBox="0 0 40 40" className="h-9 w-9" aria-hidden>
           <defs>
