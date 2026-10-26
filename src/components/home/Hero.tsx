@@ -17,7 +17,7 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
         <div>
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <Eyebrow dark>CSI-Organized Estimators · All 50 States + Canada</Eyebrow>
+            <Eyebrow dark>CSI-Organized Estimators · All 50 States</Eyebrow>
           </motion.div>
 
           <h1 className="font-display mt-7 text-[2.6rem] font-bold leading-[1.02] sm:text-6xl lg:text-7xl">

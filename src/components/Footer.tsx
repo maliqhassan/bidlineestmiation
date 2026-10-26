@@ -124,7 +124,7 @@ export function Footer() {
         </div>
 
         <p className="mt-14 border-t border-white/10 pt-8 text-xs leading-relaxed text-mist/70">
-          Serving all 50 states & Canada: {serviceAreas.join(" · ")} · and everywhere in between. Residential,
+          Serving all 50 states: {serviceAreas.join(" · ")} · and everywhere in between. Residential,
           commercial, industrial & civil estimating for GCs and subcontractors.
         </p>
 

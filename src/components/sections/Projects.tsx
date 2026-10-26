@@ -28,7 +28,7 @@ export function ProjectsGallery() {
           eyebrow="Our Experience"
           title="Estimates Delivered Across Every Sector"
           highlight={["Every", "Sector"]}
-          text="A snapshot of the project types and trades we estimate for GCs and subcontractors across all 50 states & Canada. Click any project to view larger."
+          text="A snapshot of the project types and trades we estimate for GCs and subcontractors across all 50 states. Click any project to view larger."
         />
 
         <div className="mt-12 grid auto-rows-[11rem] grid-cols-2 gap-3 sm:mt-16 sm:auto-rows-[16rem] sm:gap-4 lg:grid-cols-4">

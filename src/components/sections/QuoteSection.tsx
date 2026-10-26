@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 const cards = [
   { icon: Phone, title: "Call Us", lines: [site.phone, "Available 24/7"], href: site.phoneHref },
   { icon: Mail, title: "Email Plans", lines: site.emails, href: `mailto:${site.emails[0]}` },
-  { icon: MapPin, title: "Office", lines: [site.address, "Serving all 50 states + Canada"] },
+  { icon: MapPin, title: "Office", lines: [site.address, "Serving all 50 states"] },
   { icon: Headphones, title: "Support", lines: [site.support] },
 ];
 

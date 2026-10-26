@@ -9,7 +9,7 @@ import { WhyUs } from "@/components/sections/WhyUs";
 export const metadata: Metadata = {
   title: "About Us — 15+ Years of Construction Estimating",
   description:
-    "North America-based construction estimating company with 15+ years of experience and 2,500+ projects estimated for GCs and subcontractors across the US & Canada.",
+    "North America-based construction estimating company with 15+ years of experience and 2,500+ projects estimated for GCs and subcontractors across the US.",
 };
 
 export default function AboutPage() {

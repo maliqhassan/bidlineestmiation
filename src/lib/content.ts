@@ -39,7 +39,7 @@ export const industries = [
 export const aboutFeatures = [
   {
     title: "RSMeans Zip-Code Pricing",
-    text: "Material and labor costs localized to your exact project location in the US & Canada — no national averages.",
+    text: "Material and labor costs localized to your exact project location in the US — no national averages.",
   },
   {
     title: "All 50 CSI MasterFormat Divisions",
@@ -226,7 +226,7 @@ export const faqs = [
   },
   {
     q: "Do you work with general contractors and subcontractors?",
-    a: "Yes — we support general contractors, subcontractors, home builders, developers, architects and owners on residential, commercial, industrial and civil projects across all 50 states & Canada. GCs get full multi-division bids; subs get fast single-trade takeoffs priced to their zip code.",
+    a: "Yes — we support general contractors, subcontractors, home builders, developers, architects and owners on residential, commercial, industrial and civil projects across all 50 states. GCs get full multi-division bids; subs get fast single-trade takeoffs priced to their zip code.",
   },
   {
     q: "What software do you use for takeoffs?",
@@ -266,6 +266,6 @@ export const serviceOptions = [
 export const deadlineOptions = ["Same-Day (Rush)", "24 Hours", "48 Hours", "This Week", "Flexible"];
 
 export const serviceAreas = [
-  "New York", "Texas", "California", "Florida", "Utah", "Ontario", "British Columbia", "Alberta",
+  "New York", "Texas", "California", "Florida", "Utah",
   "Colorado", "Arizona", "Georgia", "Illinois", "Washington", "Pennsylvania", "Ohio", "North Carolina",
 ];

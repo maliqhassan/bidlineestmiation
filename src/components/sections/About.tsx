@@ -62,7 +62,7 @@ export function AboutSection({ full = false }: { full?: boolean }) {
           <Reveal delay={0.1}>
             <p className="mt-6 text-lg leading-relaxed text-muted">
               We&apos;re a North America-based construction estimating company helping general contractors and
-              subcontractors bid smarter across the US & Canada. Every quantity takeoff and cost estimate is built by a
+              subcontractors bid smarter across the US. Every quantity takeoff and cost estimate is built by a
               dedicated, field-experienced estimator and checked against RSMeans zip-code pricing — so your numbers hold
               up in the real world.
             </p>

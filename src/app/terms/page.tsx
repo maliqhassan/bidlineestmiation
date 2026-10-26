@@ -13,7 +13,7 @@ export default function TermsPage() {
         {
           title: "Our services",
           body: [
-            "We provide construction cost estimating and quantity takeoff services across all 50 US states & Canada. Every engagement begins with a flat, written quote that you approve before we start work.",
+            "We provide construction cost estimating and quantity takeoff services across all 50 US states. Every engagement begins with a flat, written quote that you approve before we start work.",
           ],
         },
         {
